@@ -27,10 +27,14 @@
             </template>
           </el-input>
         </el-form-item>
+        <el-form-item>
+          验证图
+          <mi-captcha></mi-captcha>
+        </el-form-item>
+
         <div class="login-btn">
           <el-button type="primary" @click="submitForm()">登录</el-button>
         </div>
-        <p class="login-tips">Tips : 用户名和密码随便填。</p>
       </el-form>
     </div>
   </div>
@@ -60,8 +64,7 @@ const param = reactive({
  * 这是在虚拟DOM挂载/打补丁过程中执行的，因此模板引用只会在初始化渲染之后获得赋值
  */
 // 作为模板使用的 ref 的行为与任何其他 ref 一样：它们是响应式的，可以传递到 (或从中返回) 复合函数中。
-const loginForm = ref(null);
-const count = ref(444);
+const loginForm = ref();
 const rules = {
   username: [
     {
@@ -84,9 +87,6 @@ const submitForm = () => {
     }
   });
 };
-// onMounted(() => {
-//     console.log(count, param)
-// })
 </script>
 
 <style scoped>
@@ -94,7 +94,7 @@ const submitForm = () => {
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url(../../assets/img/login-bg.jpg);
+  background-image: url(@/assets/img/login-bg.jpg);
   background-size: 100%;
 }
 .ms-title {
