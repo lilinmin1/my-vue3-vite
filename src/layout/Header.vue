@@ -55,5 +55,11 @@ const reloadPage = () => {
 // console.log(foo([5, [[4, 3], 2, 1]]));
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
 </style>

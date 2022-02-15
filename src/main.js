@@ -7,6 +7,8 @@ import router from "./router/index"
 import MakeitCaptcha from 'makeit-captcha';
 import 'makeit-captcha/dist/captcha.min.css'
 
+import "@/assets/css/reset.css"
+
 // import { setupStore } from '@/store';
 
 
